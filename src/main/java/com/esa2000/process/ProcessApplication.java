@@ -19,6 +19,7 @@ public class ProcessApplication implements CommandLineRunner {
 	private static Logger logger = Logger.getLogger(ProcessApplication.class);
 
 	public static void main(String[] args) {
+	    //-Dconfpath 直接设置java运行参数 可以替换下面的用法
 		for (String arg : args) {
 			if (arg.contains("confpath")){
 				String confpath = arg.split("=")[1].trim();
