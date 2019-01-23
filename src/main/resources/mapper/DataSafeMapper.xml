@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.esa2000.process.mapper.DataSafeMapper">
+  <resultMap id="BaseResultMap" type="com.esa2000.process.entity.DataSafe">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="ID" jdbcType="VARCHAR" property="id" />
+    <result column="SAFE_ID" jdbcType="VARCHAR" property="safeId" />
+    <result column="SAFE_TYPE" jdbcType="CHAR" property="safeType" />
+    <result column="SOURCE_TYPE" jdbcType="CHAR" property="sourceType" />
+    <result column="DATA_SOURCE" jdbcType="VARCHAR" property="dataSource" />
+    <result column="SAFE_TIME" jdbcType="TIMESTAMP" property="safeTime" />
+    <result column="SAVE_USER" jdbcType="VARCHAR" property="saveUser" />
+    <result column="SERVICE_NO" jdbcType="VARCHAR" property="serviceNo" />
+    <result column="SAFE_SIZE" jdbcType="BIGINT" property="safeSize" />
+    <result column="DATA_STATUS" jdbcType="CHAR" property="dataStatus" />
+    <result column="SAFE_STATUS" jdbcType="CHAR" property="safeStatus" />
+    <result column="SAFE_END_TIME" jdbcType="TIMESTAMP" property="safeEndTime" />
+    <result column="CREATE_BY" jdbcType="VARCHAR" property="createBy" />
+    <result column="CREATE_DATE" jdbcType="TIMESTAMP" property="createDate" />
+    <result column="UPDATE_BY" jdbcType="VARCHAR" property="updateBy" />
+    <result column="UPDATE_DATE" jdbcType="TIMESTAMP" property="updateDate" />
+    <result column="REMARKS" jdbcType="VARCHAR" property="remarks" />
+    <result column="IS_DELETE" jdbcType="CHAR" property="isDelete" />
+    <result column="CREATE_ACCOUNT" jdbcType="VARCHAR" property="createAccount" />
+    <result column="sign_value" jdbcType="VARCHAR" property="signValue" />
+    <result column="SYN_STATE" jdbcType="VARCHAR" property="synState" />
+    <result column="HASH_ALGORITHM" jdbcType="VARCHAR" property="hashAlgorithm" />
+    <result column="HASH_SOURCE" jdbcType="CHAR" property="hashSource" />
+    <result column="PUBLIC_KEY" jdbcType="VARCHAR" property="publicKey" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    ID, SAFE_ID, SAFE_TYPE, SOURCE_TYPE, DATA_SOURCE, SAFE_TIME, SAVE_USER, SERVICE_NO, 
+    SAFE_SIZE, DATA_STATUS, SAFE_STATUS, SAFE_END_TIME, CREATE_BY, CREATE_DATE, UPDATE_BY, 
+    UPDATE_DATE, REMARKS, IS_DELETE, CREATE_ACCOUNT, sign_value, SYN_STATE, HASH_ALGORITHM, 
+    HASH_SOURCE, PUBLIC_KEY
+  </sql>
+</mapper>

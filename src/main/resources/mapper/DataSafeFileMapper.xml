@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.esa2000.process.mapper.DataSafeFileMapper">
+  <resultMap id="BaseResultMap" type="com.esa2000.process.entity.DataSafeFile">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="ID" jdbcType="VARCHAR" property="id" />
+    <result column="DATA_SAFE_ID" jdbcType="VARCHAR" property="dataSafeId" />
+    <result column="SAFE_ID" jdbcType="VARCHAR" property="safeId" />
+    <result column="FORMAT_TYPE" jdbcType="CHAR" property="formatType" />
+    <result column="FILE_TYPE" jdbcType="VARCHAR" property="fileType" />
+    <result column="TYPE_SOURCE" jdbcType="CHAR" property="typeSource" />
+    <result column="FILE_EXTENSIONS" jdbcType="VARCHAR" property="fileExtensions" />
+    <result column="RESOURCE_NAME" jdbcType="VARCHAR" property="resourceName" />
+    <result column="SAVE_NAME" jdbcType="VARCHAR" property="saveName" />
+    <result column="ABSTARCT" jdbcType="VARCHAR" property="abstarct" />
+    <result column="SIGN_DATA" jdbcType="VARCHAR" property="signData" />
+    <result column="SIGN_ABSTARCT" jdbcType="VARCHAR" property="signAbstarct" />
+    <result column="DOWN_COUNT" jdbcType="INTEGER" property="downCount" />
+    <result column="SAFE_TIME" jdbcType="TIMESTAMP" property="safeTime" />
+    <result column="SAFE_SIZE" jdbcType="BIGINT" property="safeSize" />
+    <result column="HAS_RESOURCE" jdbcType="CHAR" property="hasResource" />
+    <result column="FILE_PATH" jdbcType="VARCHAR" property="filePath" />
+    <result column="CREATE_BY" jdbcType="VARCHAR" property="createBy" />
+    <result column="CREATE_DATE" jdbcType="TIMESTAMP" property="createDate" />
+    <result column="UPDATE_BY" jdbcType="VARCHAR" property="updateBy" />
+    <result column="UPDATE_DATE" jdbcType="TIMESTAMP" property="updateDate" />
+    <result column="REMARKS" jdbcType="VARCHAR" property="remarks" />
+    <result column="CREATE_ACCOUNT" jdbcType="VARCHAR" property="createAccount" />
+    <result column="sign_value" jdbcType="VARCHAR" property="signValue" />
+    <result column="SYN_STATE" jdbcType="VARCHAR" property="synState" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    ID, DATA_SAFE_ID, SAFE_ID, FORMAT_TYPE, FILE_TYPE, TYPE_SOURCE, FILE_EXTENSIONS, 
+    RESOURCE_NAME, SAVE_NAME, ABSTARCT, SIGN_DATA, SIGN_ABSTARCT, DOWN_COUNT, SAFE_TIME, 
+    SAFE_SIZE, HAS_RESOURCE, FILE_PATH, CREATE_BY, CREATE_DATE, UPDATE_BY, UPDATE_DATE, 
+    REMARKS, CREATE_ACCOUNT, sign_value, SYN_STATE
+  </sql>
+
+  <select id="queryDataSafeFile" parameterType="java.util.Map"  resultMap="BaseResultMap">
+    SELECT
+    df.*
+    FROM
+    data_safe_file df,
+    data_safe ds
+    WHERE
+    ds.IS_DELETE = '0'
+    AND ds.SOURCE_TYPE = '2'
+    AND df.SAFE_ID = ds.SAFE_ID
+    AND ds.SAVE_USER = #{saveUser}
+    AND df.HAS_RESOURCE = #{hasResource}
+  </select>
+</mapper>
