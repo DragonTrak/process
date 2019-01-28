@@ -37,7 +37,7 @@ public class SerializeUtil {
     public static void serialize(Object object,String url){
         ObjectOutputStream out = null;
         try {
-            File file = new File("url");
+            File file = new File(url);
             //如果序列化文件存在 则删除
             if (file.exists()){
                 file.delete();
